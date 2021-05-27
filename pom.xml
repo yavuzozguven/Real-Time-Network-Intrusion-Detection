@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+
+    <groupId>org.example</groupId>
+    <artifactId>NetworkIntrusionDetection</artifactId>
+    <version>1.0-SNAPSHOT</version>
+
+    <build>
+        <plugins>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-assembly-plugin</artifactId>
+                <version>2.2-beta-5</version>
+                <executions>
+                    <execution>
+                        <phase>package</phase>
+                        <goals>
+                            <goal>single</goal>
+                        </goals>
+                    </execution>
+                </executions>
+                <configuration>
+                    <archive>
+                        <manifest>
+                            <mainClass>com.yavuzozguven.nid.StreamingApp</mainClass>
+                        </manifest>
+                    </archive>
+                    <descriptorRefs>
+                        <descriptorRef>jar-with-dependencies</descriptorRef>
+                    </descriptorRefs>
+                </configuration>
+            </plugin>
+        </plugins>
+    </build>
+
+    <dependencies>
+    <dependency>
+        <groupId>org.apache.spark</groupId>
+        <artifactId>spark-core_2.12</artifactId>
+        <version>3.1.0</version>
+    </dependency>
+    <dependency>
+        <groupId>org.apache.spark</groupId>
+        <artifactId>spark-sql_2.12</artifactId>
+        <version>3.1.0</version>
+    </dependency>
+    <dependency>
+        <groupId>org.apache.spark</groupId>
+        <artifactId>spark-mllib_2.12</artifactId>
+        <version>3.1.0</version>
+    </dependency>
+    <dependency>
+        <groupId>com.linkedin.isolation-forest</groupId>
+        <artifactId>isolation-forest_3.0.0_2.12</artifactId>
+        <version>1.0.1</version>
+    </dependency>
+    <dependency>
+        <groupId>com.intel.analytics.bigdl</groupId>
+        <artifactId>bigdl-SPARK_2.3</artifactId>
+        <version>0.12.1</version>
+    </dependency>
+        <dependency>
+            <groupId>org.apache.kafka</groupId>
+            <artifactId>kafka-clients</artifactId>
+            <version>2.5.0</version>
+        </dependency>
+        <dependency>
+            <groupId>org.apache.spark</groupId>
+            <artifactId>spark-sql-kafka-0-10_2.12</artifactId>
+            <version>3.1.0</version>
+        </dependency>
+        <dependency>
+            <groupId>org.mongodb.spark</groupId>
+            <artifactId>mongo-spark-connector_2.12</artifactId>
+            <version>3.0.1</version>
+        </dependency>
+
+
+
+
+    </dependencies>
+
+</project>
